@@ -9,3 +9,7 @@ data,descricao,categoria,valor,tipo
 2025-10-15,Conta de Luz,moradia,180.00,saida
 2025-10-20,Academia,saude,99.00,saida
 2025-10-25,Combustível,transporte,250.00,saida
+2025-10-10,Aporte Selic,reserva,500.00,saida
+2025-10-25,Freela Python,receita,800.00,entrada
+2025-11-01,Salário,receita,5037.00,entrada
+2025-11-02,Aporte CDB,reserva,1000.00,saida

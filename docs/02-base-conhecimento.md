@@ -4,15 +4,12 @@
 
 Descreva se usou os arquivos da pasta `data`, por exemplo:
 
-| Arquivo | Formato | Utilização no Agente |
+| Arquivo | Formato | Utilização na FIONA |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| `historico_atendimento.csv` | CSV | Armazena as conversas passadas para que a Fiona mantenha o contexto e aprenda com as interações do usuário. |
+| `perfil_investidor.json` | JSON | Guarda as preferências de risco do usuário para personalizar as recomendações de segurança financeira. |
+| `produtos_financeiros.json` | JSON | Contém as regras e detalhes do Tesouro Selic e CDB para sugerir onde rentabilizar a reserva. |
+| `transacoes.csv` | CSV | Registra todas as entradas e saídas financeiras para calcular o saldo e o progresso da meta de emergência. |
 
 ---
 
@@ -20,7 +17,7 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+Em Produtos Financeiros, foquei exclusivamente no Tesouro Selic e CDB, por serem os ativos mais indicados para reserva de emergência e metas de curto prazo. Além disso, expandi o arquivo de Transações com novos registros fictícios para garantir testes de estresse mais precisos.
 
 ---
 
@@ -29,12 +26,12 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+A ingestão de dados na Fiona ocorre por dois canais: via prompt interativo, onde o usuário registra seus gastos em tempo real, ou por injeção direta via código, facilitando a vinculação de bases de dados externas e testes automatizados.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+No prompt, a Fiona transforma mensagens informais em dados estruturados, utilizando o contexto da conversa para atualizar o saldo em tempo real e sugerir aportes financeiros imediatos
 
 ---
 
